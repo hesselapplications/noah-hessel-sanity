@@ -20,10 +20,18 @@ export default () =>
             .documentId('skills')
         ),
 
+      S.listItem()
+        .title('Experience')
+        .child(
+          S.editor()
+            .schemaType('experience')
+            .documentId('experience')
+        ),
+
       // Add a visual divider (optional)
       S.divider(),
 
       // List out the rest of the document types, but filter out the config type
       ...S.documentTypeListItems()
-        .filter(listItem => !['aboutMe', 'skills'].includes(listItem.getId()))
+        .filter(listItem => !['aboutMe', 'skills', 'experience'].includes(listItem.getId()))
     ])
