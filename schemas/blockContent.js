@@ -61,5 +61,28 @@ export default {
       type: 'image',
       options: {hotspot: true},
     },
+    {
+      type: 'code',
+      options: {
+        languageAlternatives: [
+          // Front end
+          {title: 'Vue', value: 'vue'},
+          {title: 'HTML', value: 'html'},
+          {title: 'CSS', value: 'css'},
+          {title: 'JavaScript', value: 'javascript'},
+          {title: 'TypeScript', value: 'typescript'},
+
+          // Back end
+          {title: 'Java', value: 'java'},
+          {title: 'Python', value: 'python'},
+
+          // Misc
+          {title: 'JSON', value: 'json'},
+          {title: 'Yaml', value: 'yml'},
+          {title: 'Markdown', value: 'markdown'},
+          {title: 'Plain Text', value: 'text'},
+        ],
+      }
+    },
   ],
 }
