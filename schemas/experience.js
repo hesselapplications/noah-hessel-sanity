@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export default {
   name: 'experience',
   title: 'Experience',
@@ -18,27 +20,32 @@ export default {
             {
               title: "Title",
               name: "title",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Organization",
               name: "organization",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Start Date",
               name: "startDate",
-              type: "date"
+              type: "date",
+              validation: Rule => Rule.required()
             },
             {
               title: "End Date",
               name: "endDate",
-              type: "date"
+              type: "date",
+              validation: Rule => Rule.min(Rule.valueOfField('startDate'))
             },
             {
               title: "Accomplishments",
               name: "accomplishments",
-              type: "blockContent"
+              type: "blockContent",
+              validation: Rule => Rule.required()
             },
           ],
           preview: {
@@ -48,9 +55,14 @@ export default {
               endDate: 'endDate'
             },
             prepare({title, startDate, endDate}) {
+              function formatDate(date) {
+                if (date == null) return "Present";
+                return moment(date).format('MMM YYYY');
+              }
+
               return {
                 title: title,
-                subtitle: `${startDate} to ${endDate || 'present'}`,
+                subtitle: `${formatDate(startDate)} — ${formatDate(endDate)}`,
               }
             }
           }
