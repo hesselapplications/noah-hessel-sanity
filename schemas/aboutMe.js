@@ -28,22 +28,26 @@ export default {
             {
               title: "URL",
               name: "url",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Color",
               name: "color",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Label",
               name: "label",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Icon",
               name: "icon",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             }
           ]
         }
