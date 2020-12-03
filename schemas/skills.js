@@ -39,7 +39,13 @@ export default {
               type: "string",
               validation: Rule => Rule.required()
             },
-          ]
+          ],
+          preview: {
+            select: {
+              title: 'label',
+              subtitle: 'level',
+            },
+          }
         }
       ]
     }

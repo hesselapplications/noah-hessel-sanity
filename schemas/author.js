@@ -7,11 +7,13 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      validation: Rule => Rule.required(),
       options: {
         source: 'name',
         maxLength: 96,
@@ -25,20 +27,13 @@ export default {
     {
       name: 'bio',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      type: 'blockContent'
     },
   ],
   preview: {
     select: {
       title: 'name',
+      subtitle: 'bio',
       media: 'image',
     },
   },

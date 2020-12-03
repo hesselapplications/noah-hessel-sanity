@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export default {
   name: 'project',
   title: 'Project',
@@ -45,18 +47,18 @@ export default {
       type: 'blockContent',
     },
   ],
-
+  initialValue: () => ({
+    publishedAt: moment(new Date()).format('YYYY-MM-DD'),
+    author: {
+      _ref: "45d7b4c0-d604-41e0-a872-120ed5d2dac9",
+      _type: "reference"
+    }
+  }),
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      subtitle: 'author.name',
       media: 'mainImage',
-    },
-    prepare(selection) {
-      const {author} = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
-    },
+    }
   },
 }

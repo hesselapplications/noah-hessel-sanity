@@ -7,11 +7,13 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
+      validation: Rule => Rule.required(),
     },
   ],
 }
