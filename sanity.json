@@ -15,7 +15,8 @@
     "@sanity/desk-tool",
     "@sanity/code-input",
     "asset-source-unsplash",
-    "@sanity/vision"
+    "@sanity/vision",
+    "media"
   ],
   "env": {
     "development": {
