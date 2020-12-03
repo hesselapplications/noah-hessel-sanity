@@ -18,26 +18,37 @@ export default {
             {
               title: "Icon",
               name: "icon",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Label",
               name: "label",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
             {
               title: "Level",
               name: "level",
-              type: "number"
+              type: "number",
+              validation: Rule => Rule.required().min(0).max(100)
             },
             {
               title: "Color",
               name: "color",
-              type: "string"
+              type: "string",
+              validation: Rule => Rule.required()
             },
           ]
         }
       ]
     }
   ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Skills',
+      }
+    }
+  }
 }
