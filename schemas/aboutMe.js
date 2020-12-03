@@ -8,8 +8,7 @@ export default {
     {
       name: 'myPicture',
       title: 'My Picture',
-      type: 'image',
-      options: {hotspot: true},
+      type: 'img',
     },
     {
       name: 'aboutMe',
