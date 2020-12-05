@@ -9,6 +9,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'slug',
@@ -18,28 +19,25 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => Rule.required()
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+      validation: Rule => Rule.required()
     },
     {
       name: 'mainImage',
       title: 'Main image',
       type: 'img',
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
+      validation: Rule => Rule.required()
     },
     {
       name: 'body',
@@ -47,17 +45,9 @@ export default {
       type: 'blockContent',
     },
   ],
-  initialValue: () => ({
-    publishedAt: moment(new Date()).format('YYYY-MM-DD'),
-    author: {
-      _ref: "45d7b4c0-d604-41e0-a872-120ed5d2dac9",
-      _type: "reference"
-    }
-  }),
   preview: {
     select: {
       title: 'title',
-      subtitle: 'author.name',
       media: 'mainImage',
     }
   },

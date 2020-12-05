@@ -9,7 +9,6 @@ import img from './img'
 import blockContent from './blockContent'
 import category from './category'
 import post from './post'
-import author from './author'
 import aboutMe from './aboutMe'
 import skills from './skills'
 import experience from './experience'
@@ -29,7 +28,6 @@ export default createSchema({
     experience,
     project,
     post,
-    author,
     category,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
