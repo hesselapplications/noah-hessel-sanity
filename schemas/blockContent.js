@@ -16,9 +16,9 @@ export default {
     {
       type: 'code',
       options: {
+        withFilename: true,
         languageAlternatives: [
           // Front end
-          {title: 'Vue', value: 'vue'},
           {title: 'HTML', value: 'html'},
           {title: 'CSS', value: 'css'},
           {title: 'JavaScript', value: 'javascript'},
@@ -30,7 +30,7 @@ export default {
 
           // Misc
           {title: 'JSON', value: 'json'},
-          {title: 'Yaml', value: 'yml'},
+          {title: 'Yaml', value: 'yaml'},
           {title: 'Markdown', value: 'markdown'},
           {title: 'Plain Text', value: 'text'},
         ],
