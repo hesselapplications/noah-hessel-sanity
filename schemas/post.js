@@ -6,6 +6,12 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'img',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -22,17 +28,6 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'string',
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'img',
-      validation: Rule => Rule.required()
-    },
-    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -43,6 +38,11 @@ export default {
       title: 'Published at',
       type: 'datetime',
       validation: Rule => Rule.required()
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'string',
     },
     {
       name: 'body',
