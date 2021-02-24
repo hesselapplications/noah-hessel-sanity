@@ -22,15 +22,15 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'category'}}],
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
       validation: Rule => Rule.required()
     },
     {
@@ -43,6 +43,7 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: Rule => Rule.required()
     },
   ],
   preview: {

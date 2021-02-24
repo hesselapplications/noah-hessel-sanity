@@ -43,6 +43,7 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'body',
